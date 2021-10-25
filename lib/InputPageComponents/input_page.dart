@@ -38,8 +38,8 @@ class _InputPageState extends State<InputPage> {
                       },
                       //ternary operator using state
                       color: selectedGender == Gender.male
-                          ? kActiveCardColor
-                          : kInactiveCardColor,
+                          ? KActiveCardColor
+                          : KInactiveCardColor,
                       cardChild: IconContent(
                           icon: FontAwesomeIcons.mars, label: 'Male'),
                     ),
@@ -53,8 +53,8 @@ class _InputPageState extends State<InputPage> {
                       },
                       //ternary operator using state
                       color: selectedGender == Gender.female
-                          ? kActiveCardColor
-                          : kInactiveCardColor,
+                          ? KActiveCardColor
+                          : KInactiveCardColor,
                       cardChild: IconContent(
                           icon: FontAwesomeIcons.venus, label: 'Female'),
                     ),
@@ -64,7 +64,7 @@ class _InputPageState extends State<InputPage> {
             ),
             Expanded(
               child: ReusableCard(
-                color: kInactiveCardColor,
+                color: KInactiveCardColor,
                 cardChild: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -84,18 +84,18 @@ class _InputPageState extends State<InputPage> {
                     SliderTheme(
                       data: SliderTheme.of(context).copyWith(
                         activeTrackColor: Colors.white,
+                        inactiveTrackColor: KInactiveTrackColor,
                         thumbShape:
                             RoundSliderThumbShape(enabledThumbRadius: 15),
                         overlayShape:
                             RoundSliderOverlayShape(overlayRadius: 30),
-                        overlayColor: Color(0x1feb1555),
-                        thumbColor: Color(0xffeb1555),
+                        overlayColor: KOverlayColor,
+                        thumbColor: KThumbColor,
                       ),
                       child: Slider(
                         value: height.toDouble(),
-                        min: minHeight.toDouble(),
-                        max: maxHeight.toDouble(),
-                        inactiveColor: Color(0xff8d8e98),
+                        min: KMinHeight.toDouble(),
+                        max: KMaxHeight.toDouble(),
                         onChanged: (double newValue) {
                           setState(() {
                             height = newValue.round();
@@ -112,21 +112,21 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    color: kInactiveCardColor,
+                    color: KInactiveCardColor,
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    color: kInactiveCardColor,
+                    color: KInactiveCardColor,
                   ),
                 ),
               ],
             )),
             Container(
-              color: kBottomContainerColor,
+              color: KBottomContainerColor,
               margin: EdgeInsets.only(top: 10.0),
               width: double.infinity,
-              height: kBottomContainerHeight,
+              height: KBottomContainerHeight,
             )
           ],
         ));
