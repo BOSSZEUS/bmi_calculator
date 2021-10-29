@@ -10,6 +10,19 @@ const KNumberTextStyle = TextStyle(
   fontWeight: FontWeight.w900,
 );
 
+const KCalculateBtn = TextStyle(
+  fontSize: 25,
+  fontWeight: FontWeight.bold,
+);
+const KTitleTextStyle = TextStyle(
+  fontSize: 50,
+  fontWeight: FontWeight.bold,
+);
+const KResultTextStyle = TextStyle(
+    color: Color(0xff24d876), fontSize: 22, fontWeight: FontWeight.bold);
+const KBMITextStyle = TextStyle(fontSize: 100, fontWeight: FontWeight.bold);
+const KBodyTextStyle = TextStyle(fontSize: 22);
+
 const KBottomContainerHeight = 80.0;
 const KBottomContainerColor = Colors.red;
 const KInactiveCardColor = Color(0xff111328);

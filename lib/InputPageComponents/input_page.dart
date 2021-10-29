@@ -1,9 +1,11 @@
+import 'package:bmi_calculator/resultsPage/results_page.dart';
 import 'package:flutter/material.dart';
 import 'reusable_card.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'IconContentWidget.dart';
 import 'package:bmi_calculator/constants.dart';
 import 'reusable_button.dart';
+import '../resultsPage/bottom_button.dart';
 
 //enum created so we can use a ternary operator
 enum Gender { male, female }
@@ -24,7 +26,9 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('BMI CALCULATOR'),
+          title: Text(
+            'BMI CALCULATOR',
+          ),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -191,11 +195,16 @@ class _InputPageState extends State<InputPage> {
                 ),
               ],
             )),
-            Container(
-              color: KBottomContainerColor,
-              margin: EdgeInsets.only(top: 10.0),
-              width: double.infinity,
-              height: KBottomContainerHeight,
+            BottomButton(
+              buttonTitle: 'Calculate',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultsPage(),
+                  ),
+                );
+              },
             )
           ],
         ));
